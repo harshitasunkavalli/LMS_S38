@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Course</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css"> <!-- Add your CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>History Course</h1>
+        
+        <h2>Course Videos:</h2>
+        <ul>
+            <li><a href="https://www.example.com/video1" target="_blank">Introduction to Ancient Civilizations</a></li>
+            <li><a href="https://www.example.com/video2" target="_blank">Modern History Overview</a></li>
+        </ul>
+
+        <h2>Assignments:</h2>
+        <ul>
+            <li>Assignment 1: Research Paper on Ancient Rome (Due Date: MM/DD/YYYY)</li>
+            <li>Assignment 2: Timeline of World War II (Due Date: MM/DD/YYYY)</li>
+        </ul>
+
+        <h2>Upload Assignment:</h2>
+        <input type="file" id="file-upload" accept=".pdf, .docx, .pptx" />
+        <button id="upload-btn">Upload</button>
+        <p id="upload-status"></p>
+    </div>
+    
+    <script>
+        document.getElementById("upload-btn").addEventListener("click", () => {
+            const fileInput = document.getElementById("file-upload");
+            const uploadStatus = document.getElementById("upload-status");
+
+            if (fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                uploadStatus.textContent = `File "${fileName}" uploaded successfully!`;
+                fileInput.value = ''; // Reset file input
+            } else {
+                uploadStatus.textContent = "Please select a file to upload.";
+            }
+        });
+    </script>
+</body>
+</html>

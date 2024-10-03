@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="styles.css"> <!-- Link to CSS file -->
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Student Dashboard, <span id="student-name"></span>!</h1>
+        
+        <h2>Your Courses:</h2>
+        <ul id="courses-list"></ul>
+
+        <h2>Feedback and Assignments:</h2>
+        <ul id="assignments-list"></ul>
+    </div>
+
+    <script src="script.js"></script> <!-- Link to JavaScript file -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const studentName = localStorage.getItem("name") || "Student"; // Get name from local storage
+            document.getElementById("student-name").textContent = studentName; // Display the student's name
+
+            // Example courses and assignments
+            const courses = [
+                { name: "Mathematics", url: "math.html" },
+                { name: "Science", url: "science.html" },
+                { name: "History", url: "history.html" }
+            ];
+            const assignments = ["Assignment 1: Math Homework", "Assignment 2: Science Project"];
+
+            // Populate courses list
+            const coursesList = document.getElementById("courses-list");
+            courses.forEach(course => {
+                const listItem = document.createElement("li");
+                const link = document.createElement("a");
+                link.textContent = course.name;
+                link.href = course.url; // Set link to the respective course page
+                listItem.appendChild(link);
+                coursesList.appendChild(listItem);
+            });
+
+            // Populate assignments list
+            const assignmentsList = document.getElementById("assignments-list");
+            assignments.forEach(assignment => {
+                const listItem = document.createElement("li");
+                listItem.textContent = assignment;
+                assignmentsList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>

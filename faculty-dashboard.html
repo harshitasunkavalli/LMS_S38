@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faculty Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Faculty Dashboard</h1>
+        <h2>Your Assigned Courses:</h2>
+        <ul id="assigned-courses">
+            <!-- List of assigned courses will be populated here -->
+        </ul>
+        <h2>Upload Marks</h2>
+        <form id="upload-marks">
+            <input type="text" id="course-name" placeholder="Course Name" required>
+            <input type="text" id="marks" placeholder="Marks" required>
+            <button type="submit">Upload Marks</button>
+        </form>
+        <h2>Give Feedback</h2>
+        <form id="feedback-form">
+            <textarea id="feedback" placeholder="Feedback" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
